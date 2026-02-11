@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuella - 1 an d'amour ❤️</title>
+    <style>
+        /* Styles généraux - Couleurs de Saint-Valentin */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+            color: #4a0e2e;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+            animation: fadeInDown 1.5s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #fff0f5;
+            text-shadow: 1px 1px 2px rgba(255, 20, 147, 0.3);
+        }
+
+        /* Section présentation avec photo de couple */
+        .presentation {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            border: 2px solid #fff;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .couple-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .photo-principale {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .photo-principale img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+            border: 5px solid #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-principale img:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-couple-badge {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            background: #ff1493;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 24px;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .texte-presentation {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .texte-presentation h2 {
+            color: #ff1493;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ff69b4;
+            display: inline-block;
+        }
+
+        .anniversaire-badge {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        /* Section photos de Manuella */
+        .manuella-section {
+            background: rgba(255, 240, 245, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            animation: fadeIn 1.6s ease;
+            border: 2px solid #ffe4e1;
+        }
+
+        .manuella-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .manuella-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid #ffc0cb;
+        }
+
+        .manuella-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 35px rgba(255, 20, 147, 0.3);
+        }
+
+        .manuella-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 4px solid #ff69b4;
+        }
+
+        .manuella-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .manuella-name {
+            color: #ff1493;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .manuella-desc {
+            color: #4a0e2e;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        /* Timeline des messages */
+        .messages-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            animation: fadeIn 1.8s ease;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #ff1493;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "❤️";
+            font-size: 1.5em;
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .message-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid #ffe4e1;
+        }
+
+        .message-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.3);
+        }
+
+        .message-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #ff69b4;
+        }
+
+        .message-content {
+            padding: 20px;
+        }
+
+        .message-date {
+            color: #ff69b4;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .message-text {
+            color: #4a0e2e;
+            line-height: 1.7;
+            font-style: italic;
+            font-size: 1.05em;
+        }
+
+        .message-signature {
+            margin-top: 15px;
+            color: #ff1493;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* Section déclaration spéciale */
+        .declaration-section {
+            background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+            border-radius: 30px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease;
+            border: 2px solid #ffb6c1;
+            text-align: center;
+        }
+
+        .declaration-text {
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #4a0e2e;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .declaration-signature {
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #ff1493;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Coeurs flottants */
+        .heart {
+            position: fixed;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            user-select: none;
+            pointer-events: none;
+            z-index: 1000;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            background: rgba(255, 105, 180, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            margin-top: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .countdown {
+            font-size: 1.3em;
+            margin-top: 20px;
+            color: #fff0f5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .couple-info { flex-direction: column; }
+            .presentation, .messages-section, .manuella-section { padding: 20px; }
+            .declaration-text { font-size: 1.2em; }
+        }
+
+        /* Bouton */
+        .valentine-button {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            border: 2px solid white;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        .valentine-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div id="hearts-container"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>❤️ Manuella ❤️</h1>
+            <div class="subtitle">1 an que tu illumines ma vie</div>
+            <div style="margin-top: 20px; font-size: 2.5em; animation: pulse 2s infinite;">
+                🌹
+            </div>
+        </header>
+
+        <!-- Section présentation avec NOTRE photo de couple -->
+        <section class="presentation">
+            <div class="couple-info">
+                <div class="photo-principale">
+                    <!-- PHOTO DE COUPLE - À remplacer par votre photo locale -->
+                    <img id="couple-photo" src="6.jpeg" 
+                         alt="Manuella et son amoureux - 1 an ensemble"
+                         onerror="this.src='https://via.placeholder.com/600x400/ffb6c1/ffffff?text=Notre+Amour'">
+                    <div class="photo-couple-badge">
+                        💑 1 an
+                    </div>
+                </div>
+                <div class="texte-presentation">
+                    <h2>Notre histoire</h2>
+                    <p style="font-size: 1.2em; margin-bottom: 20px; color: #4a0e2e;">
+                        Manuella, mon amour. Il y a un an, nos chemins se sont croisés et ma vie a pris tout son sens. 
+                        Depuis ce jour, chaque instant passé avec toi est un cadeau précieux.
+                    </p>
+                    <p style="font-size: 1.1em; margin-bottom: 20px; color: #c71585;">
+                        Nous avons traversé des tempêtes, relevé des défis, mais notre amour est resté plus fort que tout. 
+                        Parce que c'est toi, parce que c'est moi, parce que c'est nous.
+                    </p>
+                    <div class="anniversaire-badge">
+                        💕 14 Février - 1 an ensemble 💕
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section LES PHOTOS DE MANUELLA -->
+        <section class="manuella-section">
+            <h2 class="section-title">✨ Mes plus beaux souvenirs de toi ✨</h2>
+            <div class="manuella-gallery" id="manuella-gallery">
+                <!-- Les photos de Manuella seront chargées ici -->
+                <!-- Placez vos photos dans le dossier images/ avec ces noms -->
+            </div>
+        </section>
+
+        <!-- Section DÉCLARATION D'AMOUR - À travers les difficultés -->
+        <section class="declaration-section">
+            <div style="font-size: 3em; margin-bottom: 20px;">💗</div>
+            <div class="declaration-text">
+                <p style="margin-bottom: 25px;">
+                    <strong>Manuella,</strong>
+                </p>
+                <p style="margin-bottom: 25px;">
+                    Un an déjà. Un an de rires, de complicité, mais aussi de moments plus difficiles que nous avons affrontés main dans la main. 
+                    On m'avait dit que l'amour parfait n'existait pas, mais je n'ai jamais cru aux histoires parfaites. 
+                    Je crois en nous. Je crois en notre capacité à traverser les tempêtes et à en sortir plus forts.
+                </p>
+                <p style="margin-bottom: 25px;">
+                    Les difficultés n'ont pas éloigné nos cœurs, elles les ont soudés. Chaque obstacle surmonté ensemble 
+                    est devenu une brique de plus dans la construction de notre histoire. Tu es mon refuge, ma force, ma raison de me lever chaque matin avec le sourire.
+                </p>
+                <p style="margin-bottom: 25px;">
+                    Malgré les épreuves, malgré les doutes, malgré tout ce qui aurait pu nous séparer, 
+                    nous sommes toujours là. Ensemble. Plus unis que jamais. Et ça, c'est la plus belle preuve d'amour.
+                </p>
+                <p style="margin-bottom: 25px;">
+                    Alors oui, je veux continuer à t'aimer, à te soutenir, à construire des rêves avec toi. 
+                    Je veux être celui qui essuie tes larmes et celui qui partage tes joies. 
+                    Je veux être ton aujourd'hui et ton demain.
+                </p>
+                <p>
+                    <strong>Merci d'être toi. Merci d'être là. Merci de nous choisir chaque jour.</strong>
+                </p>
+            </div>
+            <div class="declaration-signature">
+                <p>Pour toujours,</p>
+                <p style="font-size: 1.5em; margin-top: 10px;">Ton amoureux ❤️</p>
+            </div>
+        </section>
+
+        <!-- Section messages d'amour avec photos -->
+        <section class="messages-section">
+            <h2 class="section-title">💌 Mes mots pour toi 💌</h2>
+            <div class="timeline" id="messages-timeline">
+                <!-- Les messages avec photos seront chargés ici -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div style="font-size: 1.8em; margin-bottom: 15px; animation: pulse 2s infinite;">
+                💝 Manuella, je t'aime 💝
+            </div>
+            <div class="countdown" id="countdown">
+                Notre amour dure depuis : 1 an déjà !
+            </div>
+            <div style="margin-top: 25px; font-size: 1.2em;">
+                🌹 À travers tout, nous sommes toujours ensemble 🌹
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 📸 PHOTOS DE MANUELLA - IMPORT LOCAL
+        // Placez vos photos dans le dossier "images/" et nommez-les comme ci-dessous
+        const manuellaPhotos = [
+            {
+                url: "1.jpeg",
+                caption: "Ton sourire qui éclaire mes journées",
+                emoji: "🌸"
+            },
+            {
+                url: "3.jpeg", 
+                caption: "Ta douceur, ta bienveillance",
+                emoji: "✨"
+            },
+            {
+                url: "4.jpeg",
+                caption: "Celle qui rend ma vie plus belle",
+                emoji: "💕"
+            },
+            {
+                url: "5.jpeg",
+                caption: "Mon amour, ma meilleure amie",
+                emoji: "💖"
+            }
+        ];
+
+        // 💌 MESSAGES D'AMOUR PROFONDS AVEC PHOTOS
+        const messages = [
+            {
+                date: "Notre rencontre",
+                text: "Manuella, je me souviens du premier instant où mes yeux ont croisé les tiens. Je ne savais pas encore que ce regard allait changer ma vie. Aujourd'hui, je ne peux plus m'en passer. Tu es entrée dans mon cœur pour y rester.",
+                image: "11.jpeg",
+                emoji: "💑"
+            },
+            {
+                date: "Nos tempêtes",
+                text: "On dit que c'est dans les moments difficiles qu'on reconnaît les vrais. Toi et moi, on a traversé des vagues qui auraient pu nous emporter. Mais on a tenu bon, main dans la main. Chaque épreuve a renforcé ce qu'on construit ensemble. Merci de ne pas avoir lâché ma main.",
+                image: "8.jpeg",
+                emoji: "🌊"
+            },
+            {
+                date: "Ta force",
+                text: "Ce que j'admire le plus chez toi, c'est ta force silencieuse. Ta capacité à te relever, à sourire malgré tout, à croire en nous même quand tout semble incertain. Tu m'inspires à devenir meilleur, chaque jour un peu plus.",
+                image: "9.jpeg",
+                emoji: "🦋"
+            },
+            {
+                date: "Aujourd'hui, 1 an",
+                text: "365 jours. 365 nuits. 365 matins où je me réveille en pensant à toi. Notre amour n'est pas parfait, mais il est vrai. Il est fort. Il est nous. Et aujourd'hui plus que jamais, je veux te dire que je t'aime. Pas seulement pour ce que tu es, mais pour ce que je deviens quand je suis avec toi.",
+                image: "10.jpeg",
+                emoji: "❤️"
+            }
+        ];
+
+        // Fonction pour charger les photos de Manuella
+        function loadManuellaPhotos() {
+            const gallery = document.getElementById('manuella-gallery');
+            gallery.innerHTML = '';
+            
+            manuellaPhotos.forEach((photo, index) => {
+                const card = document.createElement('div');
+                card.className = 'manuella-card';
+                card.style.animation = `fadeIn 1.5s ease ${index * 0.2}s both`;
+                
+                card.innerHTML = `
+                    <img src="${photo.url}" 
+                         alt="Photo de Manuella" 
+                         onerror="this.src='https://via.placeholder.com/600x800/ffb6c1/ffffff?text=Manuella'">
+                    <div class="manuella-info">
+                        <div class="manuella-name">${photo.emoji} Manuella</div>
+                        <div class="manuella-desc">"${photo.caption}"</div>
+                    </div>
+                `;
+                
+                gallery.appendChild(card);
+            });
+        }
+
+        // Fonction pour charger les messages avec photos
+        function loadMessages() {
+            const timeline = document.getElementById('messages-timeline');
+            timeline.innerHTML = '';
+            
+            messages.forEach((message, index) => {
+                const card = document.createElement('div');
+                card.className = 'message-card';
+                card.style.animation = `fadeIn 1.5s ease ${index * 0.2}s both`;
+                
+                card.innerHTML = `
+                    <img src="${message.image}" 
+                         alt="Souvenir avec Manuella" 
+                         onerror="this.src='https://via.placeholder.com/600x400/ff69b4/ffffff?text=❤️+Manuella'">
+                    <div class="message-content">
+                        <div class="message-date">${message.date} ${message.emoji}</div>
+                        <div class="message-text">"${message.text}"</div>
+                        <div class="message-signature">- Ton amour</div>
+                    </div>
+                `;
+                
+                timeline.appendChild(card);
+            });
+        }
+
+        // Fonction pour créer des coeurs flottants
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                const hearts = ['❤️', '💖', '💗', '💓', '💕', '💘', '💝', '🌸', '🌹', '✨', '🕊️', '💞'];
+                heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = '100%';
+                heart.style.animation = 'float ' + (5 + Math.random() * 5) + 's ease-in-out infinite';
+                heart.style.opacity = Math.random() * 0.6 + 0.2;
+                heart.style.fontSize = (15 + Math.random() * 40) + 'px';
+                
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 10000);
+            }, 300);
+        }
+
+        // Mettre à jour le compte à rebours
+        function updateCountdown() {
+            const startDate = new Date('2024-02-14');
+            const currentDate = new Date();
+            const diffTime = Math.abs(currentDate - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            const countdownEl = document.getElementById('countdown');
+            countdownEl.innerHTML = `✨ ${diffDays} jours d'amour, 1 an de bonheur avec toi Manuella ✨`;
+        }
+
+        // Message d'amour aléatoire au clic
+        function showLoveMessage() {
+            const loveMessages = [
+                "Manuella, dans ce monde imparfait, notre amour est ma plus belle réussite. 💕",
+                "Les difficultés n'ont pas eu raison de nous, elles ont construit qui nous sommes. Merci d'être restée. 🌹",
+                "Je t'aime non pas pour qui tu es, mais pour qui je suis quand je suis avec toi. ✨",
+                "Notre histoire n'est pas un conte de fées, elle est bien mieux que ça : elle est vraie. 💖",
+                "Après la pluie vient toujours le beau temps, et toi tu es mon arc-en-ciel. 🌈",
+                "Nous sommes la preuve que l'amour vrai existe et qu'il peut tout surmonter. 💝"
+            ];
+            
+            const randomMessage = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+            
+            // Créer une notification flottante
+            const msgDiv = document.createElement('div');
+            msgDiv.style.position = 'fixed';
+            msgDiv.style.bottom = '20px';
+            msgDiv.style.right = '20px';
+            msgDiv.style.background = 'linear-gradient(45deg, #ff1493, #ff69b4)';
+            msgDiv.style.color = 'white';
+            msgDiv.style.padding = '20px 30px';
+            msgDiv.style.borderRadius = '15px';
+            msgDiv.style.boxShadow = '0 10px 30px rgba(255,20,147,0.5)';
+            msgDiv.style.zIndex = '1001';
+            msgDiv.style.animation = 'fadeIn 0.5s ease';
+            msgDiv.style.maxWidth = '300px';
+            msgDiv.style.fontSize = '1.1em';
+            msgDiv.style.border = '2px solid white';
+            msgDiv.innerHTML = `💌 ${randomMessage}`;
+            
+            document.body.appendChild(msgDiv);
+            
+            setTimeout(() => {
+                msgDiv.style.animation = 'fadeIn 0.5s ease reverse';
+                setTimeout(() => msgDiv.remove(), 500);
+            }, 4000);
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            loadManuellaPhotos();
+            loadMessages();
+            createHearts();
+            updateCountdown();
+            
+            // Ajouter le bouton de message d'amour
+            const footer = document.querySelector('footer');
+            const loveButton = document.createElement('button');
+            loveButton.className = 'valentine-button';
+            loveButton.innerHTML = '💌 Un message pour toi';
+            loveButton.onclick = showLoveMessage;
+            loveButton.style.marginTop = '30px';
+            footer.appendChild(loveButton);
+            
+            // Message de bienvenue
+            setTimeout(showLoveMessage, 1000);
+        });
+    </script>
+</body>
+</html>
